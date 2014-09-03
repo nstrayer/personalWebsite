@@ -84,7 +84,7 @@
 <ul>
 <li><strong>Software Engineering Intern</strong>, Mission Control Technologies, <em>Carpinteria, CA</em> [Summer 2014]:
 <ul>
-<li>Self directed project to bring the latest JavaScript visualization technologies to the companies main software platform.</li>
+<li>Self directed project to bring the latest JavaScript visualization technologies to the company's main software platform.</li>
 <li>Fully envisioned, prototyped and implemented new data visualization framework in the course of one month.</li>
 <li>Constructed training protocol for rapidly bringing third parties up to speed with new protocol.</li>
 </ul>
@@ -594,6 +594,9 @@ var returnToWelcome = function(){
         .duration(1000)
         .attr("cx", function(d) {return d.x;})
 		.attr("cy", function(d) {return d.y;})
+		.each("end", function(){
+			movingCircle()
+		})
 
 	welcomeCircle()
 
