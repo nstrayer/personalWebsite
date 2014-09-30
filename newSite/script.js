@@ -1,17 +1,24 @@
-var testWidth  = parseFloat(d3.select(".sectionDivs").style("width").slice(0,-2))
-var testHeight = parseFloat(d3.select(".sectionDivs").style("height").slice(0,-2))
-console.log(testWidth)
-console.log(testHeight)
-
 var padding = 8,
-	w = 0.4 * (parseFloat(d3.select(".sectionDivs").style("width").slice(0,-2))),
-	// h = 600,
-	h = parseFloat(d3.select(".sectionDivs").style("height").slice(0,-2)),
-	radius = 50, //Radius of menu bubbles
-	selectorWidth = 200, //Width of open/close menu button
-	selectorHeight = 50,
+	siteW = parseFloat(d3.select("body").style("width").slice(0,-2)),
+	siteH = parseFloat(d3.select(".sectionDivs").style("height").slice(0,-2)),
+	h = siteH,
+	w;
+
+if (siteW<siteH){ //if landscape device, ala mobile
+	w = siteW;
+} else {
+	w = 0.3 * (siteW);
+}
+	
+
+
+var	radius = 50, //Radius of menu bubbles
+	selectorWidth = w * 0.8, //Width of open/close menu button
+	selectorHeight = h * 0.1,
 	menuOpen = false, //Start with menu closed
 	divSelection;
+
+
 
 var cRed   = "#E74327",
 	cBrown = "#E8940C",
